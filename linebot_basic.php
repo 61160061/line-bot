@@ -15,10 +15,12 @@ foreach ($request_json['events'] as $event)
 			$text = $event['message']['text'];
 			
 			$reply_message = 'ฉันได้รับข้อความ '. $text.' ของคุณแล้ว!';
-			$reply_message = 'ฉันได้รับข้อความ '. $text.' ของคุณแล้ว!';   
 			
+			$reply_message = 'Thanakiat';
+			$reply_message = mySQL_selectAll('http://s61160061.kantit.com/json_select_users.php');
+
 		} else {
-			$reply_message = 'gus-gus';
+			$reply_message = 'ฉันได้รับข้อความ '. $text.' ของคุณแล้ว!';   
 		}
 	} else {
 		$reply_message = 'ฉันได้รับ Event '.$event['type'].' ของคุณแล้ว!';
