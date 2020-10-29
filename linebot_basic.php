@@ -17,7 +17,7 @@ foreach ($request_json['events'] as $event)
 			$reply_message = 'ฉันได้รับข้อความ '. $text.' ของคุณแล้ว!';
 			
 			$reply_message = 'Thanakiat';
-			$reply_message = mySQL_selectAll('http://s61160061.kantit.com/json_select_users.php');
+			$reply_message = mySQL_selectAll('http://s61160061.kantit.com/json_select.php');
 
 		} else {
 			$reply_message = 'ฉันได้รับข้อความ '. $text.' ของคุณแล้ว!';   
@@ -74,7 +74,7 @@ function mySQL_selectAll($url)
 	$data = "ผลลัพธ์:\r\n";
 		
 	foreach($result_json as $values) {
-		$data .= $values["user_stuid"] . " " . $values["user_firstname"] . " " . $values["user_lastname"] . "\r\n";
+		$data .= $values["stuid"] . " " . $values["fullname"] . " " . "\r\n";
 	}
 	
 	return $data;
